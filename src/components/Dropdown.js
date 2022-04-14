@@ -35,7 +35,7 @@ const Dropdown = ({ align }) => {
     }
     if (e.type == "button") {
       return (
-        <li key={`dropMenu-${index}`} className="menu-open-item">
+        <li key={`dropMenu-${index}`} className="menu-open-item ">
           <button onClick={e.action} className="menu-button">
             {e.name}
           </button>

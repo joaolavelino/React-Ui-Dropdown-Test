@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# React UI Dropdown Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The initial goal was to build a dropdown menu. But it presents the opportunity to think about this build and how can optimized to be easily reusable.
 
-## Available Scripts
+The only external library I used on this build was SASS.
 
-In the project directory, you can run:
+There are two additional items on the menu, so it shows the possibility of using different types of items, like anchors and buttons.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Left and right alignment
+- Conditional rendering
+- Multiple types of menu items
+- Multi-language availability
+- Color scheme using variables
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Left and right alignment
 
-### `npm test`
+The left and right alignment can be easily defined with the align prop on the component. In this build I left it binded with a state so it's possible to be changed with the click of a button.
+In an application, the developper just need to select a side and pass it as the align prop.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`<Dropdown align="left" />`
 
-### `npm run build`
+`<Dropdown align="right" />`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Conditional rendering
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It was possible to use some simple CSS animations into this build, using state-conditional classes, but I prefered to use conditional rendering so it can be easily linked to an animation library, such as Framer Motion.
+When something is not displayed, I prefere not to leave them hidden on the DOM.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Multiple types of menu items
 
-### `npm run eject`
+It was required that the menu would allow using other types of items, such as buttons and anchors. So I used a scalable aproach using an array and the map method.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### THE CONTENT ARRAY:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+It gathers all the items that will be rendered in the menu as objects with three different properties:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- NAME - the name that will be displayed on the menu;
+- TYPE - It describes the type of the item, it can be either "function", "anchor", or "button":
+  - Function: Will trigger the callback function declared on the ACTION property.
+  - Anchor: Will follow the URL declared on the ACTION property;
+  - Button: Will create a button that will trigger the callback function declared on the ACTION property.
+- ACTION - It declares the functions that will be triggered on the onClick event or the URL that will be followed by the anchor.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Multi-language availability
 
-## Learn More
+By using an array to build the menu, it's possible to import an array from somewhere else, including a multi-language package.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Color scheme using variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+It turns easy the implementation of different color themes, using Styled Components for instance.
 
-### Code Splitting
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [@joaolavelino](https://www.github.com/joaolavelino)
