@@ -35,19 +35,6 @@
   right: 0;
 }
 
-.menu-open-false {
-  opacity: 0;
-  transform: scaleY(0.5);
-  transform-origin: top;
-  pointer-events: none;
-}
-
-.menu-open-true {
-  opacity: 1;
-  transform: scaleY(1);
-  transform-origin: top;
-}
-
 .menu-open-item {
   width: 100%;
   padding: 12px;

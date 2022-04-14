@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./dropdown.scss";
 
 const Dropdown = ({ align }) => {
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
 
   const content = [
     { name: "Rename", action: () => setShowMenu(false) },
@@ -26,19 +26,21 @@ const Dropdown = ({ align }) => {
           />
         </svg>
       </div>
-      <div className={`menu-open menu-align-${align} menu-open-${showMenu}`}>
-        <ul>
-          {content.map((e, index) => (
-            <li
-              key={`dropMenu-${index}`}
-              onClick={e.action}
-              className="menu-open-item"
-            >
-              {e.name}
-            </li>
-          ))}
-        </ul>
-      </div>
+      {showMenu && (
+        <div className={`menu-open menu-align-${align}`}>
+          <ul>
+            {content.map((e, index) => (
+              <li
+                key={`dropMenu-${index}`}
+                onClick={e.action}
+                className="menu-open-item"
+              >
+                {e.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
