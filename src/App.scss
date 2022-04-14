@@ -24,10 +24,18 @@ button {
   color: hsla(225, 14%, 100%, 1);
   background-color: #0054a8;
   font-weight: bold;
-  margin-top: 2rem;
   transition: 0.2s;
   cursor: pointer;
   &:hover {
     transform: scale(1.05);
   }
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: hsla(225, 14%, 100%, 1);
 }
