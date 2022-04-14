@@ -58,7 +58,11 @@ const Dropdown = ({ align }) => {
 
   return (
     <div className="menu">
-      <div className="menu-closed" onClick={() => setShowMenu(!showMenu)}>
+      <div
+        className="menu-closed"
+        onClick={() => setShowMenu(!showMenu)}
+        data-testid="closed-menu"
+      >
         <svg
           viewBox="0 0 24 24"
           className="menu-closed-icon"
@@ -73,7 +77,10 @@ const Dropdown = ({ align }) => {
         </svg>
       </div>
       {showMenu && (
-        <div className={`menu-open menu-align-${align}`}>
+        <div
+          className={`menu-open menu-align-${align}`}
+          data-testid="open-menu"
+        >
           <ul>{content.map((e, index) => createListItem(e, index))}</ul>
         </div>
       )}

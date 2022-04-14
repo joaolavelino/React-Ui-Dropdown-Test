@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
+import AlignButton from "./components/AlignButton/AlignButton";
 import Dropdown from "./components/Dropdown";
 
 function App() {
@@ -16,9 +17,7 @@ function App() {
 
       <hr />
 
-      <button className="align-button" onClick={handleAlignment}>
-        {`Align menu to the ${menuAlign == "left" ? "right" : "left"}`}
-      </button>
+      <AlignButton menuAlign={menuAlign} setMenuAlign={setMenuAlign} />
 
       <div className="content">
         <Dropdown align={menuAlign} />

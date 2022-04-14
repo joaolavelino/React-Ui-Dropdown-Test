@@ -51,6 +51,10 @@ By using an array to build the menu, it's possible to import an array from somew
 
 It turns easy the implementation of different color themes, using Styled Components for instance.
 
+### Test Results
+
+I created some tests for the component using the React Testing Library so it's possible to see that the basic structure of it is working well.
+
 ## Authors
 
 - [@joaolavelino](https://www.github.com/joaolavelino)
